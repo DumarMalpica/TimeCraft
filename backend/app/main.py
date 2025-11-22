@@ -1,10 +1,13 @@
 from fastapi import FastAPI
-from .routers import users
+from app.routes.events import router as events_router
+from app.routes.users import router as users_router
 
-app = FastAPI(title="AI Projects Backend")
+def create_app():
+    app = FastAPI(title="TimeCraft API")
 
-app.include_router(users.router)
+    app.include_router(events_router)
+    app.include_router(users_router)
 
-@app.get("/")
-def root():
-    return {"message": "Backend funcionando correctamente"}
+    return app
+
+app = create_app()

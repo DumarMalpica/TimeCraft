@@ -1,5 +1,6 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-from .config import settings
 
-client = AsyncIOMotorClient(settings.MONGO_URI)
-db = client[settings.DB_NAME]
+MONGO_URL = "mongodb://localhost:27017"
+client = AsyncIOMotorClient(MONGO_URL)
+
+db = client["timecraft"]  # Nombre de la base

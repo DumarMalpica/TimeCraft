@@ -1,6 +1,16 @@
 fastapi
 uvicorn[standard]
 python-dotenv
-motor
 pydantic
 pydantic[email]
+
+# Base de datos SQL
+sqlalchemy
+alembic
+
+# Conector para SQLite (incluido en Python)
+# Si prefieres PostgreSQL en el futuro:
+# psycopg2-binary
+
+# Otros opcionales si deseas
+python-dateutil
